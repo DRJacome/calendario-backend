@@ -15,7 +15,7 @@ const crearEvento = async (request, res = response) => {
     const evento = new Evento(request.body);
 
     // Verificar que tenga el evento.
-    console.log(request.body);
+    // console.log('Evento: ' + request.body);
 
     try {
         evento.user = request.uid;
@@ -100,7 +100,7 @@ const eliminarEvento = async (request, res = response) => {
         await Evento.findByIdAndDelete(eventoId);
         res.json({
             ok: true,
-            msg: "Evento elimindo."
+            msg: "Evento eliminado."
         })
 
     } catch (error) {

@@ -24,6 +24,7 @@ const EventoSchema = Schema({
 });
 
 EventoSchema.method('toJSON', function() {
+    
     // Renombrar campos del evento a grabar en la BD.
     const { __v, _id, ...object } = this.toObject();
     object.id = _id;
